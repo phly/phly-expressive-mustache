@@ -60,7 +60,7 @@ class MustacheTemplateFactory
         }
 
         if (isset($config['paths']) && is_array($config['paths'])) {
-            $this->injectResolverPaths($paths, $defaultResolver);
+            $this->injectResolverPaths($config['paths'], $defaultResolver);
         }
 
         if (isset($config['suffix']) && is_string($config['suffix']) && ! empty($config['suffix'])) {
