@@ -84,7 +84,8 @@ The following is the configuration schema for supplied
             //     'second/non-namespaced/path',
             // ],
         ],
-        'suffix' => '...', // Alternate template suffix to use.
+        'suffix'    => '...', // Alternate template suffix to use.
+        'separator' => '...', // Alternate directory separator character used in template names.
         'resolvers' => [
             // List of classes and/or service names referring to
             // Phly\Mustache\Resolver\ResolverInterface implementations to
