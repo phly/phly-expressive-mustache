@@ -1,0 +1,11 @@
+<phpunit bootstrap="./vendor/autoload.php">
+    <testsuite name="phly-expressive-mustache Test Suite">
+        <directory>./test</directory>
+    </testsuite>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./src/</directory>
+        </whitelist>
+    </filter>
+</phpunit>

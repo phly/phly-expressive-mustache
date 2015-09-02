@@ -1,0 +1,8 @@
+{
+  "title": "phly-expressive-mustache: phly-mustache template adapter for Expressive",
+  "content": [
+      {"Introduction": "book/intro.md"},
+      {"Installation and Usage": "book/usage.md"}
+  ],
+  "target": "./html"
+}

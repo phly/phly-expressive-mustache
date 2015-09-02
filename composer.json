@@ -1,0 +1,34 @@
+{
+    "name": "phly/phly-expressive-mustache",
+    "description": "Mustache TemplateInterface implementation for zend-expressive",
+    "keywords": ["mustache", "expressive"],
+    "homepage": "https://github.com/phly/phly-expressive-mustache",
+    "type": "library",
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Matthew Weier O'Phinney",
+            "email": "matthew@weierophinney.net",
+            "homepage": "https://mwop.net/"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "phly/phly-mustache": "^2.0",
+        "zendframework/zend-expressive": "^0.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.7",
+        "squizlabs/php_codesniffer": "^2.3.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Phly\\Expressive\\Mustache\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PhlyTest\\Expressive\\Mustache\\": "test/"
+        }
+    }
+}
