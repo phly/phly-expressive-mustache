@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file, in reverse
 chronological order by release.
 
+## 0.1.1 - 2015-09-02
+
+### Added
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Fixed an "undefined variable" error when injecting paths via the MustacheTemplateFactory.
+
 ## 0.1.0 - 2015-09-02
 
 ### Added
