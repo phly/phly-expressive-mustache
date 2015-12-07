@@ -6,7 +6,6 @@
 
 namespace PhlyTest\Expressive\Mustache;
 
-use ArrayObject;
 use Phly\Expressive\Mustache\UriHelper;
 use PHPUnit_Framework_TestCase as TestCase;
 use Zend\Expressive\Helper\UrlHelper;
