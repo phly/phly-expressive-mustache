@@ -6,7 +6,6 @@
 
 namespace Phly\Expressive\Mustache;
 
-use Phly\Mustache\Renderer\RendererInterface;
 use RuntimeException;
 use Zend\Expressive\Helper\UrlHelper;
 
@@ -79,11 +78,14 @@ class UriHelper
      * options, checking each value for templated items, and, when found,
      * passing them through the renderer.
      *
+     * Higher order functions are passed the renderer as a callable, which
+     * accepts a string and returns a string.
+     *
      * @param array $data
-     * @param RendererInterface $renderer
+     * @param callable $renderer
      * @return array
      */
-    private function parseOptions(array $data, RendererInterface $renderer)
+    private function parseOptions(array $data, callable $renderer)
     {
         if (! isset($data['options']) || ! is_array($data['options'])) {
             return [];
