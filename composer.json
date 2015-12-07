@@ -40,6 +40,9 @@
         "cs": [
             "phpcs"
         ],
+        "cs-fix": [
+            "phpcbf"
+        ],
         "check": [
             "@cs",
             "@test"
