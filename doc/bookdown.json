@@ -3,7 +3,8 @@
   "content": [
       {"Introduction": "book/intro.md"},
       {"Installation and Usage": "book/usage.md"},
-      {"Default Params": "book/default-params.md"}
+      {"Default Params": "book/default-params.md"},
+      {"The URI Helper": "book/uri-helper.md"}
   ],
   "target": "./html"
 }
