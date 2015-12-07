@@ -15,6 +15,7 @@
     "require": {
         "php": ">=5.5",
         "phly/phly-mustache": "^2.0",
+        "zendframework/zend-expressive-helpers": "^1.1",
         "zendframework/zend-expressive-template": "^1.0"
     },
     "require-dev": {
@@ -31,5 +32,17 @@
         "psr-4": {
             "PhlyTest\\Expressive\\Mustache\\": "test/"
         }
+    },
+    "scripts": {
+        "test": [
+            "phpunit"
+        ],
+        "cs": [
+            "phpcs"
+        ],
+        "check": [
+            "@cs",
+            "@test"
+        ]
     }
 }
