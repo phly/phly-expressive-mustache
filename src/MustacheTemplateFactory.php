@@ -13,6 +13,7 @@ use Phly\Mustache\Pragma;
 use Phly\Mustache\Renderer;
 use Phly\Mustache\Resolver;
 use Zend\Escaper\Escaper;
+use Zend\Expressive\Helper\UrlHelper;
 
 /**
  * Factory for use with container-interop for creating MustacheTemplate instances from configuration.
@@ -21,7 +22,7 @@ class MustacheTemplateFactory
 {
     public function __invoke(ContainerInterface $container)
     {
-        $config = $container->has('Config') ? $container->get('Config') : [];
+        $config = $container->has('config') ? $container->get('config') : [];
         $config = isset($config['phly-mustache']) ? $config['phly-mustache'] : [];
 
         $mustache = new Mustache($this->createResolver($config, $container));
@@ -30,7 +31,10 @@ class MustacheTemplateFactory
         $this->injectRenderer($config, $mustache, $container);
         $this->injectPragmas($config, $mustache->getPragmas(), $container);
 
-        return new MustacheTemplate($mustache);
+        $renderer = new MustacheTemplate($mustache);
+        $this->injectUriHelper($renderer, $container);
+
+        return $renderer;
     }
 
     /**
@@ -239,5 +243,30 @@ class MustacheTemplateFactory
             $mustache->getRenderer()->setEscaper(new $config['escaper']());
             return;
         }
+    }
+
+    /**
+     * Inject the renderer instance with a UriHelper helper, if possible.
+     *
+     * If the zend-expressive UrlHelper is not present in the container, does
+     * nothing.
+     *
+     * Otherwise, creates a UriHelper instance using the UrlHelper from the
+     * container, and adds it as the "uri" global template parameter to the
+     * renderer.
+     *
+     * @param MustacheTemplate $renderer
+     * ContainerInterface $container
+     */
+    private function injectUriHelper(MustacheTemplate $renderer, ContainerInterface $container)
+    {
+        if (! $container->has(UrlHelper::class)) {
+            return;
+        }
+        $renderer->addDefaultParam(
+            $renderer::TEMPLATE_ALL,
+            'uri',
+            new UriHelper($container->get(UrlHelper::class))
+        );
     }
 }

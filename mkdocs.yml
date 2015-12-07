@@ -5,6 +5,7 @@ pages:
     - { Introduction: intro.md }
     - { 'Installation and Usage': usage.md }
     - { 'Default Params': default-params.md }
+    - { 'The URI Helper': uri-helper.md }
 site_name: phly-mustache
 site_description: 'phly-expressive-mustache: phly-mustache template adapter for Expressive'
 repo_url: 'https://github.com/phly/phly-mustache'

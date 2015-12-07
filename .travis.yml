@@ -17,9 +17,8 @@ matrix:
       env:
         - EXECUTE_CS_CHECK=true
     - php: 7
-    - php: hhvm 
+    - php: hhvm
   allow_failures:
-    - php: 7
     - php: hhvm
 
 before_install:
@@ -34,6 +33,6 @@ before_script:
   - if [[ $EXECUTE_DOC_CHECK == 'true' ]]; then cp mkdocs.yml mkdocs.yml.orig ; fi
 
 script:
-  - ./vendor/bin/phpunit
-  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then ./vendor/bin/phpcs ; fi
+  - composer test
+  - if [[ $EXECUTE_CS_CHECK == 'true' ]]; then composer cs ; fi
   - if [[ $EXECUTE_DOC_CHECK == 'true' ]]; then make mkdocs ; diff mkdocs.yml mkdocs.yml.orig ; return $? ; fi

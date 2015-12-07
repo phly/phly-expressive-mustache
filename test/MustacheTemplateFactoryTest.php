@@ -9,12 +9,11 @@ namespace PhlyTest\Expressive\Mustache;
 use Interop\Container\ContainerInterface;
 use Phly\Expressive\Mustache\MustacheTemplate;
 use Phly\Expressive\Mustache\MustacheTemplateFactory;
-use Phly\Mustache\Mustache;
-use Phly\Mustache\Resolver\AggregateResolver;
-use Phly\Mustache\Resolver\DefaultResolver;
+use Phly\Expressive\Mustache\UriHelper;
 use PHPUnit_Framework_TestCase as TestCase;
-use Zend\Expressive\Template\TemplateInterface;
-use Zend\Expressive\Template\TemplatePath;
+use Prophecy\Prophecy\ObjectProphecy;
+use ReflectionProperty;
+use Zend\Expressive\Helper\UrlHelper;
 
 class MustacheTemplateFactoryTest extends TestCase
 {
@@ -24,10 +23,36 @@ class MustacheTemplateFactoryTest extends TestCase
         $this->factory   = new MustacheTemplateFactory();
     }
 
+    public function injectContainer($name, $service)
+    {
+        $service = $service instanceof ObjectProphecy ? $service->reveal() : $service;
+        $this->container->has($name)->willReturn(true);
+        $this->container->get($name)->willReturn($service);
+    }
+
     public function testFactoryCanCreateInstanceWithoutConfiguration()
     {
-        $this->container->has('Config')->willReturn(false);
+        $this->container->has('config')->willReturn(false);
+        $this->container->has(UrlHelper::class)->willReturn(false);
         $result = $this->factory->__invoke($this->container->reveal());
         $this->assertInstanceOf(MustacheTemplate::class, $result);
+    }
+
+    public function testFactoryInjectsUriHelperAsGlobalDefaultUriParameter()
+    {
+        $this->injectContainer(UrlHelper::class, $this->prophesize(UrlHelper::class));
+
+        $this->container->has('config')->willReturn(false);
+        $mustache = $this->factory->__invoke($this->container->reveal());
+        $this->assertInstanceOf(MustacheTemplate::class, $mustache);
+
+        $r = new ReflectionProperty($mustache, 'defaultParams');
+        $r->setAccessible(true);
+        $defaultParams = $r->getValue($mustache);
+
+        $this->assertArrayHasKey('*', $defaultParams);
+        $params = $defaultParams['*'];
+        $this->assertArrayHasKey('uri', $params, var_export(array_keys($params), 1));
+        $this->assertInstanceOf(UriHelper::class, $params['uri']);
     }
 }
