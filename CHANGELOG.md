@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file, in reverse
 chronological order by release.
 
+## 1.0.0 - 2015-12-07
+
+### Added
+
+- [#2](https://github.com/phly/phly-expressive-mustache/pull/2) adds the new
+  `UriHelper` class, which implements a higher order section for rendering
+  route-based URIs inside of templates.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- [#2](https://github.com/phly/phly-expressive-mustache/pull/2) replaces the
+  zend-expressive dependency with:
+  - zendframework/zend-expressive-template (which contains the
+    `TemplateRendererInterface` and traits used by `MustacheTemplate`)
+  - zendframework/zend-expressive-helpers (which provides the `UrlHelper` on
+    which the new `UriHelper` depends)
+
 ## 0.3.0 - 2015-10-27
 
 ### Added
@@ -23,7 +48,6 @@ chronological order by release.
 ### Fixed
 
 - Updated to zend-expressive 1.0.
-
 
 ## 0.2.0 - 2015-09-04
 
