@@ -13,7 +13,6 @@ use Phly\Mustache\Mustache;
 use Phly\Mustache\Resolver\AggregateResolver;
 use Phly\Mustache\Resolver\DefaultResolver;
 use PHPUnit_Framework_TestCase as TestCase;
-use Zend\Expressive\Template\TemplateInterface;
 use Zend\Expressive\Template\TemplatePath;
 
 class MustacheTemplateFactoryTest extends TestCase
