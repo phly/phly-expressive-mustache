@@ -19,7 +19,9 @@ chronological order by release.
 
 ### Fixed
 
-- Nothing.
+- [#3](https://github.com/phly/phly-expressive-mustache/pull/3) updates the
+  zendframework/zend-expressive-helpers dependency to 1.2 to ensure no circular
+  dependency issues occur.
 
 ## 1.0.0 - 2015-12-07
 
