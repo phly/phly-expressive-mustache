@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file, in reverse
 chronological order by release.
 
+## 1.0.2 - 2016-01-19
+
+### Added
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Updated to use zendframework/zend-expressive-helpers `^1.2 || ^2.0`; the
+  functionality in this package only relies on the `UrlHelper`, and does not
+  care how it is injected with the route result.
+
 ## 1.0.1 - 2015-12-08
 
 ### Added
