@@ -9,4 +9,4 @@ pages:
 site_name: phly-mustache
 site_description: 'phly-expressive-mustache: phly-mustache template adapter for Expressive'
 repo_url: 'https://github.com/phly/phly-mustache'
-copyright: 'Copyright (c) 2015 <a href="https://mwop.net/">Matthew Weier O\''Phinney</a>'
+copyright: 'Copyright (c) 2016 <a href="https://mwop.net/">Matthew Weier O\''Phinney</a>'
