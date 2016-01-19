@@ -15,7 +15,7 @@
     "require": {
         "php": "^5.5 || ^7.0",
         "phly/phly-mustache": "^2.0",
-        "zendframework/zend-expressive-helpers": "^1.2",
+        "zendframework/zend-expressive-helpers": "^1.2 || ^2.0",
         "zendframework/zend-expressive-template": "^1.0"
     },
     "require-dev": {
