@@ -7,7 +7,7 @@
 namespace PhlyTest\Expressive\Mustache;
 
 use Phly\Expressive\Mustache\UriHelper;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 use Zend\Expressive\Helper\UrlHelper;
 use Zend\Expressive\Router\Exception\RuntimeException;
 
@@ -104,7 +104,7 @@ class UriHelperTest extends TestCase
         $this->baseHelper->generate('resource', [])->willThrow(RuntimeException::class);
         $helper = $this->createHelper();
         $function = $helper();
-        $this->setExpectedException(RuntimeException::class);
+        $this->expectException(RuntimeException::class);
         $url = $function('{"name":"resource"}', $this->renderer);
     }
 }

@@ -11,7 +11,7 @@ use Phly\Expressive\Mustache\MustacheTemplate;
 use Phly\Mustache\Mustache;
 use Phly\Mustache\Resolver\AggregateResolver;
 use Phly\Mustache\Resolver\DefaultResolver;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
 class MustacheTemplateTest extends TestCase

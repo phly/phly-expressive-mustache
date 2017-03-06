@@ -10,7 +10,7 @@ use Interop\Container\ContainerInterface;
 use Phly\Expressive\Mustache\MustacheTemplate;
 use Phly\Expressive\Mustache\MustacheTemplateFactory;
 use Phly\Expressive\Mustache\UriHelper;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
 use ReflectionProperty;
 use Zend\Expressive\Helper\UrlHelper;

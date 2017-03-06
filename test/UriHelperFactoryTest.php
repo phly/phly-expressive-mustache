@@ -9,7 +9,7 @@ namespace PhlyTest\Expressive\Mustache;
 use Interop\Container\ContainerInterface;
 use Phly\Expressive\Mustache\UriHelper;
 use Phly\Expressive\Mustache\UriHelperFactory;
-use PHPUnit_Framework_TestCase as TestCase;
+use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use Zend\Expressive\Helper\UrlHelper;
 
@@ -33,7 +33,7 @@ class UriHelperFactoryTest extends TestCase
     {
         $factory = $this->factory;
         $this->container->get(UrlHelper::class)->willThrow(RuntimeException::class);
-        $this->setExpectedException(RuntimeException::class);
+        $this->expectException(RuntimeException::class);
         $factory($this->container->reveal());
     }
 }
