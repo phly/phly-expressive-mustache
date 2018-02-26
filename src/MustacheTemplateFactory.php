@@ -239,7 +239,7 @@ class MustacheTemplateFactory
             return;
         }
 
-        if (class_exist($config['escaper'])) {
+        if (class_exists($config['escaper'])) {
             $mustache->getRenderer()->setEscaper(new $config['escaper']());
             return;
         }
