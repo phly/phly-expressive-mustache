@@ -104,7 +104,7 @@ class MustacheTemplate implements TemplateRendererInterface
     /**
      * {@inheritDoc}
      */
-    public function render($name, $vars = [])
+    public function render(string $name, $vars = []) : string
     {
         $vars = $this->mergeParams($name, $vars);
         return $this->renderer->render($name, $vars);
@@ -113,7 +113,7 @@ class MustacheTemplate implements TemplateRendererInterface
     /**
      * {@inheritDoc}
      */
-    public function addPath($path, $namespace = null)
+    public function addPath(string $path, string $namespace = null) : void
     {
         $this->resolver->addTemplatePath($path, $namespace);
     }
@@ -121,7 +121,7 @@ class MustacheTemplate implements TemplateRendererInterface
     /**
      * {@inheritDoc}
      */
-    public function getPaths()
+    public function getPaths() : array
     {
         $resolver = $this->resolver;
         $paths    = [];
@@ -138,10 +138,8 @@ class MustacheTemplate implements TemplateRendererInterface
 
     /**
      * Creates and returns a DefaultResolver.
-     *
-     * @return DefaultResolver
      */
-    private function createDefaultResolver()
+    private function createDefaultResolver() : DefaultResolver
     {
         $this->resolver = new DefaultResolver();
         return $this->resolver;
@@ -151,10 +149,8 @@ class MustacheTemplate implements TemplateRendererInterface
      * Extract and compose the DefaultResolver found in an AggregateResolver.
      *
      * Also sets the internal $resolver property to the first found.
-     *
-     * @param AggregateResolver $aggregate
      */
-    private function extractDefaultResolver(AggregateResolver $aggregate)
+    private function extractDefaultResolver(AggregateResolver $aggregate) : void
     {
         if ($this->resolver instanceof DefaultResolver) {
             return;
@@ -182,7 +178,7 @@ class MustacheTemplate implements TemplateRendererInterface
      * @param array|object $vars Passed template variables.
      * @return array|object
      */
-    private function mergeParams($name, $vars)
+    private function mergeParams(string $name, $vars)
     {
         $globalDefaults = isset($this->defaultParams[TemplateRendererInterface::TEMPLATE_ALL])
             ? $this->defaultParams[TemplateRendererInterface::TEMPLATE_ALL]

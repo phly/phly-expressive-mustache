@@ -6,12 +6,12 @@
 
 namespace Phly\Expressive\Mustache;
 
-use Interop\Container\ContainerInterface;
 use Phly\Mustache\Lexer;
 use Phly\Mustache\Mustache;
 use Phly\Mustache\Pragma;
 use Phly\Mustache\Renderer;
 use Phly\Mustache\Resolver;
+use Psr\Container\ContainerInterface;
 use Zend\Escaper\Escaper;
 use Zend\Expressive\Helper\UrlHelper;
 

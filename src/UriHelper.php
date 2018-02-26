@@ -6,7 +6,6 @@
 
 namespace Phly\Expressive\Mustache;
 
-use RuntimeException;
 use Zend\Expressive\Helper\UrlHelper;
 
 /**
