@@ -6,10 +6,10 @@
 
 namespace PhlyTest\Expressive\Mustache;
 
-use Interop\Container\ContainerInterface;
 use Phly\Expressive\Mustache\UriHelper;
 use Phly\Expressive\Mustache\UriHelperFactory;
 use PHPUnit\Framework\TestCase;
+use Psr\Container\ContainerInterface;
 use RuntimeException;
 use Zend\Expressive\Helper\UrlHelper;
 

@@ -6,12 +6,12 @@
 
 namespace PhlyTest\Expressive\Mustache;
 
-use Interop\Container\ContainerInterface;
 use Phly\Expressive\Mustache\MustacheTemplate;
 use Phly\Expressive\Mustache\MustacheTemplateFactory;
 use Phly\Expressive\Mustache\UriHelper;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Prophecy\ObjectProphecy;
+use Psr\Container\ContainerInterface;
 use ReflectionProperty;
 use Zend\Expressive\Helper\UrlHelper;
 

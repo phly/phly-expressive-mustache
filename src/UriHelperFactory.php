@@ -6,7 +6,7 @@
 
 namespace Phly\Expressive\Mustache;
 
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use Zend\Expressive\Helper\UrlHelper;
 
 class UriHelperFactory
