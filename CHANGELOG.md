@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file, in reverse
 chronological order by release.
 
+## 2.0.0 - 2018-03-27
+
+### Added
+
+- Nothing.
+
+### Changed
+
+- [#5](https://github.com/phly/phly-expressive-mustache/pull/5) updates
+  dependencies to use  zendframework/zend-expressive-helpers `^5.0` and
+  zendframework/zend-expressive-template `^2.0` (Expressive 3 compatibility).
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- [#5](https://github.com/phly/phly-expressive-mustache/pull/5) removes support
+  for PHP versions prior to 7.1.
+
+### Fixed
+
+- Nothing.
+
 ## 1.1.0 - 2017-03-06
 
 ### Added
