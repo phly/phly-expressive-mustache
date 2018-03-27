@@ -15,8 +15,8 @@
     "require": {
         "php": "^7.1",
         "phly/phly-mustache": "^2.0",
-        "zendframework/zend-expressive-helpers": "^5.0alpha3",
-        "zendframework/zend-expressive-template": "^2.0alpha1"
+        "zendframework/zend-expressive-helpers": "^5.0",
+        "zendframework/zend-expressive-template": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0.2",
@@ -44,6 +44,5 @@
     },
     "config": {
         "sort-packages": true
-    },
-    "minimum-stability": "alpha"
+    }
 }
