@@ -1,5 +1,9 @@
 # phly-expressive-mustache
 
+> :warning: **Archived 2025-08-17**
+>
+> Use at your own risk.
+
 [![Build Status](https://secure.travis-ci.org/phly/phly-expressive-mustache.png?branch=develop)](http://travis-ci.org/phly/phly-expressive-mustache)
 
 phly-expressive-mustache provides a [zend-expressive](http://zend-expressive.rtfd.org)
